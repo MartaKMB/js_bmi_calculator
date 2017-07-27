@@ -54,6 +54,7 @@ var result_number;
 var fixed_result;
 var coma_weight;
 var coma_height;	
+var confrim_weight;
 	
 document.getElementById('id_button').addEventListener("click", function(){
 			
@@ -69,60 +70,87 @@ document.getElementById('id_button').addEventListener("click", function(){
 
 /* calculation */
 
-function calcBMI(numA, numB) {
+function calcBMIcases(numA, numB) {
 		
 	if(isNaN(numA) || numA == '' || numA == 0 || isNaN(numB) || numB == '' || numB == 0) {
 				
 		document.getElementById('result_div_number').innerHTML = 'Podaj dane liczbowe większe od zera';
 	
+	} else if (numA < 20 || numA > 500) {
+		
+		confrim_weight = window.confirm('Podałaś/eś prawidłowe dane w polu dotyczącym wagi?');
+		
+		if(confrim_weight) {
+			calcBMI(numA, numB);
+		} else {
+			document.getElementById('id_weight').focus();
+		}
+		
+	} else if (numB < 1 || numB > 400) {
+		
+		confrim_weight = window.confirm('Podałaś/eś prawidłowe dane w polu dotyczącym wzrostu?');
+		
+		if(confrim_weight) {
+			calcBMI(numA, numB);
+		} else {
+			document.getElementById('id_height').focus();
+		}
+		
+	}  else {
+			
+			calcBMI(numA, numB);
+			
+	}		
+		return fixed_result;		
+}
+
+
+function calcBMI(numA, numB) {
+	
+	if(numB >= 100) {
+		
+		numB /= 100;
+		
+		result_number = numA / Math.pow(numB, 2);
+		fixed_result = result_number.toFixed(2);
+				
+		document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
+		
 	} else {
 		
-		if(numB >= 100) {
-			
-			numB /= 100;
-			
-			result_number = numA / Math.pow(numB, 2);
-			fixed_result = result_number.toFixed(2);
+		result_number = numA / Math.pow(numB, 2);
+		fixed_result = result_number.toFixed(2);
 				
-			document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
-		} else {
-			
-			result_number = numA / Math.pow(numB, 2);
-			fixed_result = result_number.toFixed(2);
-				
-			document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
-		}		
-		return fixed_result;		
+		document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
 	}
+
 }
 		
 function messageBMI(numA, numB) {
 			
-	var result_to_message = calcBMI(numA, numB);
+	var result_to_message = calcBMIcases(numA, numB);
 
 	if (result_to_message < 18.5) {
 		
-		document.getElementById('result_div_message').innerHTML = 'Niedowaga';
+		document.getElementById('result_div_message').innerHTML = 'Interpretacja wyniku: niedowaga';
 		document.getElementById('result_div_message').style.color = '#ff3f3d';	
 				
 	} else if (result_to_message < 24.9) {
 		
-		document.getElementById('result_div_message').innerHTML = 'Waga w normie';
+		document.getElementById('result_div_message').innerHTML = 'Interpretacja wyniku: waga w normie';
 		document.getElementById('result_div_message').style.color = '#fec262';
 		
 				
 	} else if (result_to_message < 29.9) {
 		
-		document.getElementById('result_div_message').innerHTML = 'Nadwaga';
+		document.getElementById('result_div_message').innerHTML = 'Interpretacja wyniku: nadwaga';
 		document.getElementById('result_div_message').style.color = '#ff3f3d';
 				
 	} else if (result_to_message > 30) {
 		
-		document.getElementById('result_div_message').innerHTML = 'Otyłość';
+		document.getElementById('result_div_message').innerHTML = 'Interpretacja wyniku: otyłość';
 		document.getElementById('result_div_message').style.color = '#ff3f3d';
-		
-		
-			
+				
 	} else {
 				
 		document.getElementById('result_div_message').innerHTML = 'Spróbuj jeszcze raz!';
