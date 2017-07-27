@@ -1,7 +1,7 @@
 /* create form */
 
 var label_weight = document.createElement('label');
-var node_weight = document.createTextNode('Podaj swoją wagę w kilogramach:');
+var node_weight = document.createTextNode('Podaj swoją wagę (w kilogramach):');
 label_weight.appendChild(node_weight);
 label_weight.id = "id_label_weight"
 
@@ -9,7 +9,7 @@ var input_weight = document.createElement('input');
 input_weight.id = 'id_weight';
 		
 var label_height = document.createElement('label');
-var node_height = document.createTextNode('Podaj wzrost w metrach:');
+var node_height = document.createTextNode('Podaj wzrost (w metrach lub centymetrach):');
 label_height.appendChild(node_height);	
 label_height.id = 'id_label_height'	
 		
@@ -51,14 +51,20 @@ page_container.appendChild(result_div_message);
 var number_weight;
 var number_height;
 var result_number;
-var fixed_result;		
+var fixed_result;
+var coma_weight;
+var coma_height;	
 	
 document.getElementById('id_button').addEventListener("click", function(){
 			
-	number_weight = parseFloat(document.getElementById('id_weight').value);
-	number_height = parseFloat(document.getElementById('id_height').value);
+	coma_weight = document.getElementById('id_weight').value;
+	coma_height = document.getElementById('id_height').value;
+		
+	number_weight = parseFloat(coma_weight.replace(',', '.'));
+	number_height = parseFloat(coma_height.replace(',', '.'));
+		
+	messageBMI(number_weight, number_height);	
 			
-	messageBMI(number_weight, number_height);			
 });
 
 /* calculation */
@@ -71,11 +77,21 @@ function calcBMI(numA, numB) {
 	
 	} else {
 		
-		result_number = numA / Math.pow(numB, 2);
-		fixed_result = result_number.toFixed(2);
+		if(numB >= 100) {
+			
+			numB /= 100;
+			
+			result_number = numA / Math.pow(numB, 2);
+			fixed_result = result_number.toFixed(2);
 				
-		document.getElementById('result_div_number').innerHTML = fixed_result;
+			document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
+		} else {
+			
+			result_number = numA / Math.pow(numB, 2);
+			fixed_result = result_number.toFixed(2);
 				
+			document.getElementById('result_div_number').innerHTML = 'Twoje BMI: ' + fixed_result;
+		}		
 		return fixed_result;		
 	}
 }
