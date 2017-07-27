@@ -1,7 +1,7 @@
 /* create form */
 
 var label_weight = document.createElement('label');
-var node_weight = document.createTextNode('Podaj swoją wagę w kilogramach');
+var node_weight = document.createTextNode('Podaj swoją wagę w kilogramach:');
 label_weight.appendChild(node_weight);
 label_weight.id = "id_label_weight"
 
@@ -9,7 +9,7 @@ var input_weight = document.createElement('input');
 input_weight.id = 'id_weight';
 		
 var label_height = document.createElement('label');
-var node_height = document.createTextNode('Podaj wzrost w metrach');
+var node_height = document.createTextNode('Podaj wzrost w metrach:');
 label_height.appendChild(node_height);	
 label_height.id = 'id_label_height'	
 		
@@ -87,59 +87,30 @@ function messageBMI(numA, numB) {
 	if (result_to_message < 18.5) {
 		
 		document.getElementById('result_div_message').innerHTML = 'Niedowaga';
-		document.getElementById('result_div_message').style.color = '#a17944';	
+		document.getElementById('result_div_message').style.color = '#ff3f3d';	
 				
 	} else if (result_to_message < 24.9) {
 		
 		document.getElementById('result_div_message').innerHTML = 'Waga w normie';
-		document.getElementById('result_div_message').style.color = '#49a109';
+		document.getElementById('result_div_message').style.color = '#fec262';
 		
 				
 	} else if (result_to_message < 29.9) {
 		
 		document.getElementById('result_div_message').innerHTML = 'Nadwaga';
-		document.getElementById('result_div_message').style.color = '#a17944';
+		document.getElementById('result_div_message').style.color = '#ff3f3d';
 				
 	} else if (result_to_message > 30) {
 		
 		document.getElementById('result_div_message').innerHTML = 'Otyłość';
-		document.getElementById('result_div_message').style.color = '#dd2d00';
+		document.getElementById('result_div_message').style.color = '#ff3f3d';
 		
 		
 			
 	} else {
 				
 		document.getElementById('result_div_message').innerHTML = 'Spróbuj jeszcze raz!';
-		document.getElementById('result_div_message').style.color = '#aaaaaa';
+		document.getElementById('result_div_message').style.color = '#fec262';
 	}
 }
-
-/* styling */
-
-document.getElementById('id_label_height').style.textAlign = 'center';
-document.getElementById('id_label_weight').style.textAlign = 'center';
-
-document.getElementById('id_height').style.display = 'block';
-document.getElementById('id_height').style.margin = '10px auto 10px auto';
-document.getElementById('id_height').style.border = '2px solid #666666';
-document.getElementById('id_height').style.backgroundColor = '#aaaaaa';
-document.getElementById('id_height').style.height = '26px';
-
-document.getElementById('id_weight').style.display = 'block';
-document.getElementById('id_weight').style.margin = '10px auto 10px auto';
-document.getElementById('id_weight').style.border = '2px solid #666666';
-document.getElementById('id_weight').style.backgroundColor = '#aaaaaa';
-document.getElementById('id_weight').style.height = '26px';
-
-document.getElementById('id_button').style.display = 'block';
-document.getElementById('id_button').style.margin = '10px auto 10px auto';
-document.getElementById('id_button').style.padding = '10px';
-document.getElementById('id_button').style.backgroundColor = '#3eacff';
-document.getElementById('id_button').style.border = '2px solid #3eacff';
-document.getElementById('id_button').style.color = '#ffffff';
-document.getElementById('id_button').style.height = '26px';
-
-document.getElementById('result_div_number').style.textAlign = 'center';
-
-document.getElementById('result_div_message').style.textAlign = 'center';
 

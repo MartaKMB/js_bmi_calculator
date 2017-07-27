@@ -1,0 +1,46 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-image: url(runner.jpeg);
+	/* https://www.pexels.com/photo/woman-girl-silhouette-jogger-40751/ */
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: Arial, sans-serif;
+	font-size: 20px;
+	color: #954d1d;
+}
+
+#page_container {
+	width: 400px;
+	margin: 100px auto auto auto;
+}
+
+label, input, button {
+	display: block;
+	padding: 20px;
+	width: 350px;
+	margin: 5px auto 5px auto;
+}
+
+input {
+	background-color: #ffe378;
+	border: 2px solid #fec262;
+	border-radius: 5%;
+}
+
+button {
+	margin-top: 15px;
+	background-color: #fec262;
+	border: 2px solid #fec262;
+	border-radius: 5%;
+	color: #fffee0;
+	font-size: 22px;
+}
+
+div {
+	text-align: center;
+	margin: 15px auto 5px auto;
+	padding: 10px;
+	color: #fffee0;
+}
+
