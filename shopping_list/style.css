@@ -1,15 +1,16 @@
 body {
-  background-image: url('https://cdn.pixabay.com/photo/2015/12/23/13/57/bag-1105587_960_720.jpg');
-  background-size: 50%;
+  background-image: url('food-healthy-vegetables-potatoes.jpg');
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center -5%;
 }
 
 div.page_container {
   width: 400px;
-  margin: 15% auto 15% auto;
-  padding: 10px;
+  margin: 5px auto auto auto;
+  padding: 25px;
   text-align: center;
+  background-color: #edebd6;
+  border-radius: 5%;
 }
 
 #input_item {
