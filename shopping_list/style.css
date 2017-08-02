@@ -1,0 +1,62 @@
+body {
+  background-image: url('https://cdn.pixabay.com/photo/2015/12/23/13/57/bag-1105587_960_720.jpg');
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-position: center -5%;
+}
+
+div.page_container {
+  width: 400px;
+  margin: 15% auto 15% auto;
+  padding: 10px;
+  text-align: center;
+}
+
+#input_item {
+  width: 70%;
+  padding: 5px;
+}
+
+#id_button_add {
+  width: 25%;
+  background-color: #ddf595;
+  border: 2px solid #2e8301;
+  color: #2e8301;
+  font-size: 20px;
+}
+
+#id_button_add:hover {
+  background-color: #2e8301;
+  color: #ddf595;
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 5px 20px 5px 25px;
+  text-align: left;
+}
+
+.button_delete {
+  margin: 5px 5px 5px 30px;
+  background-color: #e6c987;
+  border: 1px solid #e6bb5a;
+  color: #ff8b00;
+  margin-right: 10px;
+}
+
+.button_delete:hover {
+  background-color: #e6bb5a;
+}
+
+#id_button_clear {
+  width: 100%;
+  background-color: #ffad05;
+  border: 2px solid #d5340a;
+  color: #d5340a;
+  font-size: 20px;
+}
+
+#id_button_clear:hover {
+  background-color: #d5340a;
+  color: #ffad05;
+}
