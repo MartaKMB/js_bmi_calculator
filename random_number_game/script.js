@@ -2,6 +2,8 @@ var randomNr;
 var id_nr_game;
 var check_answer;
 var msg_confirm;
+var counter = 0;
+var counter_msg;
 
 randomNr = Math.floor((Math.random() * 100) + 1);
 
@@ -16,12 +18,18 @@ document.getElementById('id_nr_game').addEventListener('keyup', function(event){
 });
 
 function check_nr() {
+	
+  counter++;
   id_nr_game = document.getElementById('id_nr_game').value;
   
   document.getElementById('id_nr_game').value = '';
   document.getElementById('id_nr_game').focus();
   
   check_answer = document.getElementById('check_answer');
+  
+  counter_msg = document.getElementById('id_counter');
+  
+  counter_msg.innerHTML = 'To jest Twoja: ' + counter + ' próba.';
   
   if (id_nr_game.indexOf('.') != -1 || id_nr_game.indexOf(',') != -1) {
     check_answer.innerHTML = 'Wpisz liczbę NATURALNĄ (bez przecinka), aby zagrać.';
@@ -33,14 +41,17 @@ function check_nr() {
   else {
       if(id_nr_game == randomNr) {
       
-      msg_confirm = window.confirm('Brawo! Jesteś zwycięzcą! Czy chcesz zagrać jeszcze raz?');
+      msg_confirm = window.confirm('Brawo! Jesteś zwycięzcą! Udało Ci się za ' + (counter--) + ' razem! Czy chcesz zagrać jeszcze raz?');
         check_answer.innerHTML = '';
         if(msg_confirm == true) {
           randomNr = Math.floor((Math.random() * 100) + 1);
+		  counter_msg.innerHTML = '';
+          counter = 0;
         } else {
           document.getElementById('game_field').style.display = 'none';
           check_answer.innerHTML = 'Gratulujemy wygranej. Dziękujemy za wspólną grę.';
           check_answer.style.color = 'red';
+		  counter_msg.innerHTML = 'Prawidłowa liczba została podana za: ' + (counter--) + ' razem';
         }
       
     } else if(id_nr_game > randomNr) {
