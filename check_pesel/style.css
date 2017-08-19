@@ -1,0 +1,31 @@
+body {
+  background: url(pexels-photo-315919.png) no-repeat;
+  background-size: 30%;
+  background-position: -6% 26%;
+}
+
+#page_container {
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid #b60000;
+  color: #b60000;
+  border-radius: 5%;
+  padding: 10px;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+#id_button, #id_input_pesel {
+  border: 2px solid #b60000;
+  background-color: inherit;
+  color: #b60000;
+  border-radius: 5%;
+  padding: 4px;
+  text-align: center;
+}
+
+#id_button:hover {
+  background-color: #b60000;
+  color: white;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+<head>
+	
+	<meta charset="utf-8">
+	<title>life calculator</title>	
+	
+	<meta name="author" content="Marta Mucha-Balcerek">
+	
+	<link href="style.css" rel="stylesheet">
+	
+	
+	
+</head>
+
+<body>
+
+	<div id="page_container">
+  
+	  <h1>Czy wiesz jak długo jesteś na tym świecie?</h1>
+	  
+	  <p>poniżej wybierz swój rok, miesiąc i dzień urodzenia</p>
+	  
+	  <select id="select_year">
+		<option value="0">- wybierz rok -</option>
+	  </select>
+	  
+	  <select id="select_month">
+		<option value="0">- wybierz miesiąc -</option>
+	  </select>
+	  
+	  <select id="select_day">
+		<option value="0" id="nothing_day">- wybierz dzień -</option>
+	  </select>
+	  
+	  <button id="id_button">OBLICZ!</button>
+	  
+	  <p id="p_msg"></p>
+	  <p id="msg_sec"></p>
+	  <p id="msg_min"></p>
+	  <p id="msg_hours"></p>
+	  <p id="msg_day"></p>
+	  <p id="msg_month"></p>
+	  
+	  <br>
+	  <p>W obliczeniach przyjęto, że: 
+		  <ul>
+			<li>każdy rok ma 365 dni,</li>
+			<li>każdy miesiąc ma 31 dni,</li>
+			<li>godziny, minuty i sekundy obliczane z dokładnością do jednej doby.</li>
+		  </ul>
+	  </p>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
