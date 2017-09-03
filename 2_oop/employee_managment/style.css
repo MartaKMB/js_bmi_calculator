@@ -1,0 +1,109 @@
+body {
+  background: #f0f5f5;
+}
+
+#page_container {
+  background: #669999;
+  padding: 10px;
+  width: 990px;
+  margin: auto;
+  text-align: center;
+  border: 2px solid #527a7a;
+  color: #f0f5f5;
+}
+
+h1 {
+  color: #141f1f;
+  text-decoration: underline;
+}
+
+div#div_message {
+  background: #ff6666;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+h2 {
+  font-weight: normal;
+}
+
+.flex_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+div#result_name, div#result_surname, div#result_salary {
+  flex: 1;
+  flex-basis: 33%;
+  background: #527a7a;
+  border: 2px solid #527a7a;
+  margin: 2px;
+  padding: 6px;
+}
+
+div#result_name > input, div#result_surname > input, div#result_salary > input, div#result_name > button, div#result_surname > button, div#result_salary > button, div#result_all > button, div#add_employee > input, div#add_employee > button {
+  display: block;
+  width: 200px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #527a7a;
+  color: #527a7a;
+  background: #f0f5f5;
+  padding: 4px;
+  text-align: center;
+  font-size: 15px;
+}
+
+ul {
+  border-top: 1px solid #f0f5f5;
+  width: 180px;
+  margin: auto;
+  padding: 10px;
+  text-align: left;
+}
+
+ul > li {
+  margin: 8px;
+}
+
+div#result_all, div#add_employee {
+  flex: 1;
+  flex-basis: 33%;
+  background: #527a7a;
+  border: 2px solid #527a7a;
+  margin: 2px;
+}
+
+div#add_employee {
+  flex: 2;
+  flex-basis: 66.9%;
+}
+
+div#add_employee > input, div#add_employee > button {
+  display: inline-block;
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+span#small_star {
+  font-size: 12px;
+  vertical-align: top;
+}
+
+div#result_all {
+  flex: 1;
+  flex-basis: 33%;
+}
+
+div#result_all > button {
+  width: 280px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+div#result_name > button:hover, div#result_surname > button:hover, div#result_salary > button:hover, div#result_all > button:hover, div#add_employee > button:hover {
+  background: #ff6666;
+  color: #f0f5f5;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>employee managment</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    
+    <div id="page_container">
+        
+        <h1>PRACOWNICY</h1>
+
+          <div id="div_message"></div>
+
+          <div class="flex_container">
+
+            <div id="result_name">
+              <h2>Znajdź pracownika po imieniu:</h2>
+              <input type="text" id="input_name">
+              <button id="button_name">SZUKAJ PO IMIENIU</button>
+              <ul id="list_result_name"></ul>
+            </div>
+
+            <div id="result_surname">
+              <h2>Znajdź pracownika po nazwisku:</h2>
+              <input type="text" id="input_surname">
+              <button id="button_surname">SZUKAJ PO NAZWISKU</button>
+              <ul id="list_result_surname"></ul>
+            </div>
+
+            <div id="result_salary">
+              <h2>Znajdź pracowników, którzy zarabiają minimum:</h2>
+              <input type="text" id="input_salary">
+              <button id="button_salary">SZUKAJ WEDŁUG PENSJI</button>
+              <ul id="list_result_salary"></ul>
+            </div>
+
+        </div>
+
+        <div class="flex_container">
+
+            <div id="add_employee">
+              <h2>Dodaj pracownika<span id="small_star">*</span></h2>
+
+              <input type="text" id="input_add_name" placeholder="imię">
+              <input type="text" id="input_add_surname" placeholder="nazwisko">
+              <input type="text" id="input_add_salary" placeholder="zarobki">
+
+              <button id="button_add">DODAJ</button>
+
+              <p><span id="small_star">*</span> dane będą dostępne tylko do czasu odświeżenia, ponownego załadowania strony</p>
+            </div>
+
+            <div id="result_all">
+              <button id="button_all">WYŚWIETL WSZYSTKICH PRACOWNIKÓW</button>
+              <ul id="list_result_all"></ul>
+            </div>
+
+        </div>
+
+</div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
